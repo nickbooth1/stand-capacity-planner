@@ -33,7 +33,7 @@ echo "  ✅ PostgreSQL is ready"
 
 # Wait for backend
 echo "  - Waiting for Backend API..."
-until curl -s http://localhost:3002/api/health > /dev/null 2>&1; do
+until curl -s http://localhost:3001/api/health > /dev/null 2>&1; do
     sleep 1
 done
 echo "  ✅ Backend API is ready"
@@ -48,7 +48,7 @@ echo "✅ All services are running!"
 echo ""
 echo "📍 Access Points:"
 echo "   Frontend:  http://localhost:3000"
-echo "   Backend:   http://localhost:3002"
+echo "   Backend:   http://localhost:3001"
 echo "   Database:  localhost:5432 (stand_capacity)"
 echo ""
 echo "📋 Useful Commands:"

@@ -44,8 +44,8 @@ fi
 
 # Check backend API
 echo "3. Checking backend API..."
-if curl -s http://localhost:3002/api/health > /dev/null 2>&1; then
-    HEALTH=$(curl -s http://localhost:3002/api/health)
+if curl -s http://localhost:3001/api/health > /dev/null 2>&1; then
+    HEALTH=$(curl -s http://localhost:3001/api/health)
     DB_STATUS=$(echo "$HEALTH" | grep -o '"database":"[^"]*"' | cut -d'"' -f4)
 
     if [ "$DB_STATUS" = "connected" ]; then
@@ -70,7 +70,7 @@ fi
 # Check API endpoints
 echo "5. Checking API endpoints..."
 for endpoint in "/api" "/api/health" "/api/stands"; do
-    if curl -s "http://localhost:3002${endpoint}" > /dev/null 2>&1; then
+    if curl -s "http://localhost:3001${endpoint}" > /dev/null 2>&1; then
         echo "   ✅ GET ${endpoint}"
     else
         echo "   ❌ GET ${endpoint}"

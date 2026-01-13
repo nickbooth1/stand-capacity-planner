@@ -18,8 +18,8 @@ echo ""
 echo "🏥 Health Checks:"
 
 # Backend
-if curl -s http://localhost:3002/api/health > /dev/null 2>&1; then
-    HEALTH=$(curl -s http://localhost:3002/api/health)
+if curl -s http://localhost:3001/api/health > /dev/null 2>&1; then
+    HEALTH=$(curl -s http://localhost:3001/api/health)
     echo "  ✅ Backend: Running"
     echo "     Response: $HEALTH"
 else
@@ -43,5 +43,5 @@ fi
 echo ""
 echo "📍 Access Points:"
 echo "   Frontend:  http://localhost:3000"
-echo "   Backend:   http://localhost:3002"
+echo "   Backend:   http://localhost:3001"
 echo "   Database:  localhost:5432"
